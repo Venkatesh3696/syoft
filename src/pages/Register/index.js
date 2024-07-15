@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Greeting from "../Greeting";
+import Button from "../../components/Button";
+import Input from "../../components/Input";
 
 const Register = () => {
   const [firstName, setFirstName] = useState("");
@@ -41,7 +43,7 @@ const Register = () => {
     <div className="h-full flex rounded-md overflow-hidden">
       <Greeting />
       <div className="h-full w-2/5 p-20 bg-white">
-        <h1>Sgn up</h1>
+        <h1>Sign up</h1>
         <p>
           Already have an account?
           <a href="/login" className="text-blue-500">
@@ -50,7 +52,7 @@ const Register = () => {
         </p>
         <form className="w-full flex flex-col" onSubmit={onSubmitForm}>
           <label htmlFor="firstname">First name *</label>
-          <input
+          <Input
             type="text"
             id="firstname"
             required="required"
@@ -58,7 +60,7 @@ const Register = () => {
             onChange={(e) => setFirstName(e.target.value)}
           />
           <label htmlFor="lastname">Last name *</label>
-          <input
+          <Input
             type="text"
             id="lastname"
             required="required"
@@ -66,7 +68,7 @@ const Register = () => {
             onChange={(e) => setLastName(e.target.value)}
           />
           <label htmlFor="password">Password *</label>
-          <input
+          <Input
             type="text"
             id="password"
             required="required"
@@ -74,14 +76,14 @@ const Register = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <label htmlFor="company">Company</label>
-          <input
+          <Input
             type="text"
             id="company"
             value={company}
             onChange={(e) => setCompany(e.target.value)}
           />
           <div>
-            <input
+            <Input
               type="checkbox"
               id="tc"
               value={tc}
@@ -89,22 +91,22 @@ const Register = () => {
               className="mr-2"
             />
             <label htmlFor="tc" className="cursor-pointer">
-              I agree to the{" "}
+              I agree to the
               <a href="#" className="text-blue-500">
                 Terms of Service and Privacy
-              </a>{" "}
-              and{" "}
+              </a>
+              and
               <a href="#" className="text-blue-500">
                 Privacy Policy
               </a>
             </label>
           </div>
-          <button
+          <Button
             type="submit"
             className="bg-blue-600 w-fit px-4 py-2  text-white rounded-full"
           >
             Create your free account
-          </button>
+          </Button>
         </form>
       </div>
     </div>
